@@ -1,5 +1,7 @@
 ---
 # file: bash.yml
-- hosts: dev  
+- hosts: dev
+  remote_user: vagrant
+  become: true
   roles:
     - common
