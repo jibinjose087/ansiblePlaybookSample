@@ -1,7 +1,7 @@
 ---
 # file: bash.yml
-- hosts: dev
- #remote_user: u45191
-  become: true
+- hosts: dev_ss_test
+  #remote_user: u45191
+  #become: true
   roles:
     - common
