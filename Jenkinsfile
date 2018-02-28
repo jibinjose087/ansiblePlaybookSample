@@ -1,13 +1,15 @@
 pipeline {
     agent any
         parameters {
-            booleanParam(defaultValue: true, description: '', name: 'testbool')
+            booleanParam(defaultValue: Jibin, description: '', name: 'testbool')
             }
         stages {
             stage ('Git SCM stage'){
+                when {
+                    sh '${ params.testbool == 'Jibin' }'
+                }
                 steps {
-
-                 echo "Jibin: ${params.testbool}"
+                    sh 'echo "Sucess with variable"'
                 }
             }
             stage ('Build Stage'){
@@ -24,7 +26,7 @@ pipeline {
             }
             stage ('artifact stage'){
                 steps {
-                build 'ssansible-project'
+                sh 'echo "artifcat to artifactory"'
                 }
             }
         }
