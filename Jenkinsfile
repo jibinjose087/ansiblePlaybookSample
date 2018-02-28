@@ -16,12 +16,16 @@ pipeline {
                 sh 'echo "Deploy Stage"'
                 }
             }
-
             stage ('artifact stage'){
                 steps {
                 sh 'echo "Artifact  Stage"'
                 }
             }
-
         }
+        
+    post {
+        always {
+        sh 'echo "deployment completed and the post build starts"'
+        }
+    }
 }
