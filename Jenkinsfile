@@ -6,6 +6,8 @@ pipeline {
                     sh "mkdir -p output"
                     writeFile file: "output/usefulfile.txt", text: "This file is useful, need to archive it."
                     writeFile file: "output/readme.md", text: "readme file"
+                    writeFile file: "output/new-file.txt", text: "This is a new file"
+                    writeFile file: "output/jibin.txt", text: "This file needs to be excluded"
                     }
             }
             stage ('Build Stage'){
@@ -30,7 +32,7 @@ pipeline {
     post {
         always {
             sh 'echo "deployment completed and the post build starts"'
-            archiveArtifacts artifacts: 'output/*.txt', onlyIfSuccessful: true
+            archiveArtifacts artifacts: 'output/*.txt', excludes: 'output/jibin.txt' onlyIfSuccessful: true
             }
         changed {
         sh 'echo "ERROR in deployment"'
