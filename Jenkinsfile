@@ -13,7 +13,9 @@ pipeline {
             }
             stage ('Deploy stage'){
                 steps {
-                sh 'echo "Deploy Stage"'
+                retry(4) {
+                sh 'echo "Deploy Stage multiple times"'
+                        }
                 }
             }
             stage ('artifact stage'){
