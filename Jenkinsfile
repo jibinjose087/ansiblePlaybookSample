@@ -1,13 +1,13 @@
 pipeline {
     agent any
         parameters {
-                booleanParam(defaultValue: true, description: '', name: 'testbool')
+            booleanParam(defaultValue: true, description: '', name: 'testbool')
             }
-
         stages {
             stage ('Git SCM stage'){
                 steps {
-                sh 'echo "Download Stage ${params.testbool}"'
+
+                sh 'echo "flag: ${params.testbool}"'
                 }
             }
             stage ('Build Stage'){
