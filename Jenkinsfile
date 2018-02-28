@@ -2,7 +2,6 @@ pipeline {
     agent any
         parameters {
                 booleanParam(defaultValue: true, description: '', name: 'testbool')
-                string(defaultValue: Jibin, description: '', name: 'name')
             }
 
         stages {
@@ -13,7 +12,7 @@ pipeline {
             }
             stage ('Build Stage'){
                 steps {
-                sh 'echo "The job ${params.name} going to start the Build Stage"'
+                sh 'echo "The job going to start the Build Stage"'
                 }
             }
             stage ('Deploy stage'){
