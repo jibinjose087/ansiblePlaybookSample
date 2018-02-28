@@ -6,7 +6,7 @@ pipeline {
         stages {
             stage ('Git SCM stage'){
                 when {
-                    expression { params.testbool == 'Jibin' }"
+                    expression { params.testbool == 'Jibin' }
                 }
                 steps {
                     sh 'echo "Sucess with variable"'
