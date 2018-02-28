@@ -6,7 +6,7 @@ pipeline {
             stages {
                 stage ('deployment stage'){
                     steps {
-                    sh echo "Version number is $VERSION"
+                    echo "Version number is $VERSION"
                     }
         }
     }
