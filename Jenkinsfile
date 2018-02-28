@@ -18,7 +18,7 @@ pipeline {
             }
             stage ('artifact stage'){
                 steps {
-                she 'echo "Artifact  Stage"'
+                build 'ssansible-project'
                 }
             }
         }
