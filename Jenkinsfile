@@ -18,7 +18,7 @@ pipeline {
             }
             stage ('artifact stage'){
                 steps {
-                sh 'echo "Artifact  Stage"'
+                she 'echo "Artifact  Stage"'
                 }
             }
         }
@@ -26,6 +26,9 @@ pipeline {
     post {
         always {
         sh 'echo "deployment completed and the post build starts"'
-        }
+            }
+        changed {
+        sh 'echo "ERROR in deployment"'
+            }
     }
 }
