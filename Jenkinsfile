@@ -29,7 +29,8 @@ pipeline {
         
     post {
         always {
-        sh 'echo "deployment completed and the post build starts"'
+            sh 'echo "deployment completed and the post build starts"'
+            archiveArtifacts artifacts: 'output/*.txt', onlyIfSuccessful: true
             }
         changed {
         sh 'echo "ERROR in deployment"'
