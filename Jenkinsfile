@@ -1,13 +1,14 @@
 pipeline {
     agent any
-        environment {
-          VERSION = 'NEW'
-        }
-            stages {
-                stage ('deployment stage'){
-                    steps {
-                    echo "Version number is $VERSION"
-                    }
+    environment {
+        DISABLE_AUTH = 'true'
+        DB_ENGINE        = 'sqlite'
+    }
+    stages {
+        stage('Build') {
+            steps {
+                sh 'printenv’
+            }
         }
     }
 }
