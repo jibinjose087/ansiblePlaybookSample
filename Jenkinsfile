@@ -12,7 +12,9 @@ pipeline {
             }
             stage ('Build Stage'){
                 when {
-                   branch "master"
+                  expression {
+                    return sh(script: "git rev-parse --abbrev-ref HEAD", returnStdout: true).trim() == "master"
+                  }
                 }
                 steps {
                 sh 'echo "PROD The job going to start the Build Stage"'
