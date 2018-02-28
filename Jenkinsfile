@@ -1,14 +1,29 @@
+
 pipeline {
     agent any
-    environment {
-        DISABLE_AUTH = 'true'
-        DB_ENGINE        = 'sqlite'
-    }
     stages {
-        stage('Build') {
+        stage('No-op') {
             steps {
-                sh 'printenv'
+                sh 'ls'
             }
+        }
+    }
+    post {
+        always {
+            echo 'I have finished'
+            deleteDir() // clean up workspace
+        }
+        success {
+            echo 'I succeeded!'
+        }
+        unstable {
+            echo 'I am unstable :/'
+        }
+        failure {
+            echo 'I failed :('
+        }
+        changed {
+            echo 'Things are different...'
         }
     }
 }
