@@ -7,7 +7,7 @@ pipeline {
             stage ('Git SCM stage'){
                 steps {
 
-                sh 'echo "flag: ${params.testbool}"'
+                 echo "flag: ${params.testbool}"
                 }
             }
             stage ('Build Stage'){
