@@ -32,7 +32,7 @@ pipeline {
     post {
         always {
             sh 'echo "deployment completed and the post build starts"'
-            archiveArtifacts artifacts: 'output/*.txt', excludes: 'output/jibin.txt' onlyIfSuccessful: true
+            archiveArtifacts artifacts: 'output/*.txt', excludes: 'output/jibin.txt', onlyIfSuccessful: true
             }
         changed {
         sh 'echo "ERROR in deployment"'
