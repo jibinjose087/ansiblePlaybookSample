@@ -1,8 +1,5 @@
 pipeline {
     agent any
-        parameters {
-            booleanParam(defaultValue: Jibin, description: '', name: 'testbool')
-            }
         stages {
             stage ('Git SCM stage'){
                 steps {
