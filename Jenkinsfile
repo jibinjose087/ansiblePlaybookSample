@@ -1,7 +1,7 @@
 pipeline {
     agent any
         environment {
-          VERSION = NEW
+          VERSION = 'NEW'
         }
             stages {
                 stage ('deployment stage'){
