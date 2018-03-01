@@ -5,7 +5,7 @@ node {
                 checkout scm
             }
             stage ('deploy') {
-                sh "echo 'hello world'''"
+                sh "ping 197.23.34.56"
             }
         }
         catch (err) {
