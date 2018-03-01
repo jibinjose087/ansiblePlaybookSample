@@ -5,7 +5,7 @@ node {
                 checkout scm
             }
             stage ('deploy') {
-                sh "echo 'hello world''"
+                sh "echo 'hello world'''"
             }
         }
         catch (err) {
