@@ -1,6 +1,6 @@
 ---
 # file: bash.yml
-- hosts: all
+- hosts: dev
   #remote_user: u45191
   #become: true
   roles:
