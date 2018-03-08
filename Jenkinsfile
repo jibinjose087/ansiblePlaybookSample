@@ -8,7 +8,7 @@ pipeline {
         }
         stage('Ansible') { 
             steps {
-            ansiblePlaybook credentialsId: '14b010f2-3bce-416b-96e3-dd889ff4f0f6', extras: '"test1":"JIBIN", "test2":"TOM"', inventory: '${WORKSPACE}/environments/dev.ini', playbook: '${WORKSPACE}/site.yml', sudoUser: null
+            ansiblePlaybook credentialsId: '14b010f2-3bce-416b-96e3-dd889ff4f0f6', extras: 'test1 JIBIN, test2 TOM', inventory: '${WORKSPACE}/environments/dev.ini', playbook: '${WORKSPACE}/site.yml', sudoUser: null
             }
         }
         stage('Deploy') { 
