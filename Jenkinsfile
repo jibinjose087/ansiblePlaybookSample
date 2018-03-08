@@ -1,15 +1,21 @@
-node {
+pipeline {
+    agent any 
     deleteDir ()
-        try {
-            stage ('clone') {
-                checkout scm
-            }
-            stage ('deploy') {
-                sh "ping 197.23.34.56"
+    stages {
+        stage('Checkout SCM') { 
+            steps {
+              checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/jibinjose087/ansiblePlaybookSample.git']]])
             }
         }
-        catch (err) {
+        stage('Test') { 
+            steps {
+              sh "echo 'hello world'"
+            }
+        }
+        stage('Deploy') { 
+            steps {
             currentBuild.result = 'FAILED'
-        throw err
+            }
         }
- }
+    }
+}
