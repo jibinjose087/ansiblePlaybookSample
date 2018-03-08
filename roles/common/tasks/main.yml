@@ -8,3 +8,12 @@
   shell: "echo bye"
   tags:
     - bye
+    
+- debug:
+    msg: "{{ test1 }}"
+    
+- debug:
+    msg: "{{ test2 }}"
+    
+- debug:
+    msg: "{{ test3 }}"
