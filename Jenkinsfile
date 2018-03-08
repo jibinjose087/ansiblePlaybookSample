@@ -1,20 +1,20 @@
 pipeline {
     agent any 
-    deleteDir ()
+    deleteDir()
     stages {
         stage('Checkout SCM') { 
             steps {
               checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/jibinjose087/ansiblePlaybookSample.git']]])
             }
         }
-        stage('Test') { 
+        stage('Ansible') { 
             steps {
-              sh "echo 'hello world'"
+            ansiblePlaybook credentialsId: '14b010f2-3bce-416b-96e3-dd889ff4f0f6', extras: 'test1=JIBIN, test2=TOM', inventory: '${WORKSPACE}/environments/dev.ini', playbook: '${WORKSPACE}/site.yml', sudoUser: null
             }
         }
         stage('Deploy') { 
             steps {
-            currentBuild.result = 'FAILED'
+                sh "echo 'deployment completed'"
             }
         }
     }
