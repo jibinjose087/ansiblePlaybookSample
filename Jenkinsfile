@@ -1,9 +1,9 @@
 pipeline {
     agent any 
-    deleteDir()
     stages {
         stage('Checkout SCM') { 
             steps {
+              deleteDir()
               checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/jibinjose087/ansiblePlaybookSample.git']]])
             }
         }
