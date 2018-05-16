@@ -1,7 +1,7 @@
 ---
 # file: bash.yml
-- hosts: dev
-  remote_user: imsqadps
+- hosts: webserver-ansar
+  #remote_user: imsqadps
   #become: true
   roles:
     - common
