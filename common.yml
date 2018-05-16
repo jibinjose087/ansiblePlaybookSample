@@ -1,6 +1,6 @@
 ---
 # file: bash.yml
-- hosts: webserver-ansar
+- hosts: 18.222.95.68
   #remote_user: imsqadps
   #become: true
   roles:
