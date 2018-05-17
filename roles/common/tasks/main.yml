@@ -10,10 +10,10 @@
     - bye
     
 - debug:
-    msg: "{{ test1 }}"
+    msg: "{{ APP }}"
     
 - debug:
-    msg: "{{ test2 }}"
+    msg: "{{ APP }}"
     
 - debug:
-    msg: "{{ test3 }}"
+    msg: "{{ APP }}"
