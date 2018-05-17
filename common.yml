@@ -1,6 +1,6 @@
 ---
 # file: bash.yml
-- hosts: "{{ webserveransar }}"
+- hosts: "{{ groups.name:webserveransar }}"
   #remote_user: imsqadps
   #become: true
   roles:
