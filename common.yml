@@ -1,6 +1,6 @@
 ---
 # file: bash.yml
-- hosts: webserver-ansar
+- hosts: groups.name:webserver-ansar
   #remote_user: imsqadps
   #become: true
   roles:
