@@ -1,0 +1,3 @@
+- src: https://github.com/jibinjose087/ansiblePlaybookSample1.git
+  version: master
+  name: ansiblePlaybookSample1
