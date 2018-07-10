@@ -8,12 +8,3 @@
   shell: "echo bye"
   tags:
     - bye
-    
-- debug:
-    msg: "{{ APP }}"
-    
-- debug:
-    msg: "{{ APP }}"
-    
-- debug:
-    msg: "{{ APP }}"
